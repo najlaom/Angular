@@ -1,0 +1,287 @@
+<div id="navbar">
+    <div class="navigation-example">
+      <nav class="navbar navbar-expand-lg bg-primary">
+        <div class="container">
+          <div class="navbar-translate">
+            <a class="navbar-brand" href="javascript:void(0)">
+              Welcome
+            </a>
+            <button
+              aria-controls="navbarSupportedContent"
+              aria-label="Toggle navigation"
+              class="navbar-toggler"
+              [attr.aria-expanded]="!isCollapsed"
+              (click)="isCollapsed = !isCollapsed"
+              id="example-navbar-primary"
+              type="button"
+            >
+              <span class="navbar-toggler-bar bar1"> </span>
+              <span class="navbar-toggler-bar bar2"> </span>
+              <span class="navbar-toggler-bar bar3"> </span>
+            </button>
+          </div>
+          <div
+            class="navbar-collapse"
+            [isAnimated]="true"
+            [collapse]="isCollapsed"
+            id="example-navbar-primary"
+          >
+          <ul class="navbar-nav ml-auto">
+            <li class="dropdown nav-item" dropdown>
+              <a
+                class="dropdown-toggle nav-link dropdown-toggle"
+                data-toggle="dropdown"
+                dropdownToggle
+                href="javascript:void(0)"
+              >
+                <i class="fa fa-cogs d-lg-none d-xl-none"> </i> Events 
+              </a>
+              <div class="dropdown-menu dropdown-with-icons" *dropdownMenu>
+                <a
+                  class="dropdown-item"
+                  [routerLink]="['/maplist']"
+                  
+                >
+                  <i class="tim-icons icon-paper"> </i> Map List
+                </a>
+                <a class="dropdown-item" [routerLink]="['/landing']">
+                  <i class="tim-icons icon-bullet-list-67"> </i> Register Page
+                </a>
+                <a class="dropdown-item" [routerLink]="['/list-event']">
+                  <i class="tim-icons icon-image-02"> </i> List Event
+                </a>
+                <a class="dropdown-item" [routerLink]="['/update-event']">
+                  <i class="tim-icons icon-single-02"> </i> Update
+                </a>
+              </div>
+            </li>
+            <li class="dropdown nav-item" dropdown>
+              <a
+                class="dropdown-toggle nav-link dropdown-toggle"
+                data-toggle="dropdown"
+                dropdownToggle
+                href="javascript:void(0)"
+              >
+                <i class="fa fa-cogs d-lg-none d-xl-none"> </i> Items 
+              </a>
+              <div class="dropdown-menu dropdown-with-icons" *dropdownMenu>
+                
+                
+                <a class="dropdown-item" [routerLink]="['/item']">
+                  <i class="tim-icons icon-bullet-list-67"> </i> Add Item
+                </a>
+                <a class="dropdown-item" [routerLink]="['/list-items']">
+                  <i class="tim-icons icon-image-02"> </i> List Items
+                </a>
+              </div>
+            </li>
+            <li class="dropdown nav-item" dropdown>
+              <a
+                class="dropdown-toggle nav-link dropdown-toggle"
+                data-toggle="dropdown"
+                dropdownToggle
+                href="javascript:void(0)"
+              >
+                <i class="fa fa-cogs d-lg-none d-xl-none"> </i> Publicities 
+              </a>
+              <div class="dropdown-menu dropdown-with-icons" *dropdownMenu>
+                
+                
+                <a class="dropdown-item" [routerLink]="['/publicity']">
+                  <i class="tim-icons icon-bullet-list-67"> </i> Add Publicity
+                </a>
+                <a class="dropdown-item" [routerLink]="['/list-publicities']">
+                  <i class="tim-icons icon-image-02"> </i> List Publicities
+                </a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/profile']">
+                <i class="tim-icons icon-single-02"> </i> Profile
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0)">
+                <i class="tim-icons icon-settings-gear-63"> </i> Settings
+              </a>
+            </li>
+          </ul>
+          </div>
+        </div>
+    </nav>
+    
+
+    <!-- <section class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card card-plain">
+              <div class="card-header">
+                <h1 class="profile-title text-left">Add New article </h1>
+                <h5 class="text-on-back">02</h5>
+              </div>
+              <div class="card-body">
+                <form class="form" (submit)="onRegister()">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label> intitule  </label>
+                        <input
+                        [(ngModel)]="intitule"
+                        name ="intitule"
+                         class="form-control" type="text" placeholder="Event intitule ...." />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label> Description </label>
+                        <input
+                        [(ngModel)]="description"
+                        name ="description"
+                          class="form-control"
+                          placeholder="Event description ...."
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <img [src]="imageUrl" style="width:250px;height:200px">
+<input type="file" #image accept="image/*" (change)="handleFileInput($event.target.files)">
+     
+                    <div class="row">
+                      
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <label> isActive </label>
+                              <div class ="form-check form-check-radio">
+                                <label class="form-check-label"> 
+                                  <input id="isActive" 
+                                  name="isActive"
+                                  [(ngModel)]="isActive"
+                                  type="radio" 
+                                  value="true" 
+                                  class="form-check-input">
+                                  <span class="form-check-sign">
+                                   Is Active 
+                                  </span>  
+                                </label>
+                              </div>
+                              
+                          </div>
+                            
+                      </div>
+                    </div>
+                    
+                  <button
+                    class="btn btn-danger btn-round float-right"
+                    placement="right"
+                    type="submit"
+                  >
+                    Add article
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section> -->
+    
+    <section class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card card-plain">
+              <div class="card-header" >
+                <h1 class="profile-title text-left">Update This article </h1>
+                <h5 class="text-on-back">03</h5>
+              </div>
+              <div class="card-body">
+                <form class="form" (submit)="onSubmit()"  >
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label> Title  </label>
+                        <input
+                        
+                        [(ngModel)]="namePublicity"
+                        name ="namePublicity"
+                         class="form-control" type="text" placeholder="Publicity title ...." />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label> Description </label>
+                        <input
+                        [(ngModel)]="description"
+                        name ="description"
+                          class="form-control"
+                          placeholder="Publicity description ...."
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                          <label> Start Date </label>
+                          <input
+                          [(ngModel)]="startDate"
+                        name ="startDate"
+                            class="form-control"
+                            type="date"
+                            
+                          />
+                        </div>
+                      </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label> End Date </label>
+                            <input
+                            [(ngModel)]="endDate"
+                         name ="endDate"
+                              class="form-control"
+                              type="date"
+                              
+                            />
+                          </div>
+                        </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                          <label> adress </label>
+                          <input
+                          [(ngModel)]="url"
+                          name ="url"
+                          class="form-control"
+                           type="text"
+                            placeholder="Publicity Adress ...."
+                          />
+                        </div>
+                      </div>
+                      
+                   
+                  </div>
+                   <button
+                    class="btn btn-danger btn-round float-right"
+                    placement="right"
+                    type="submit"
+                   
+                  >
+                    Update Publicity
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+  </div>
+    </div>
+    
+  

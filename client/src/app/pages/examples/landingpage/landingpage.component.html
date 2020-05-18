@@ -1,0 +1,226 @@
+<div id="navbar">
+  <div class="navigation-example">
+    <nav class="navbar navbar-expand-lg bg-primary">
+      <div class="container">
+        <div class="navbar-translate">
+          <a class="navbar-brand" href="javascript:void(0)">
+            Welcome
+          </a>
+          <button
+            aria-controls="navbarSupportedContent"
+            aria-label="Toggle navigation"
+            class="navbar-toggler"
+            [attr.aria-expanded]="!isCollapsed"
+            (click)="isCollapsed = !isCollapsed"
+            id="example-navbar-primary"
+            type="button"
+          >
+            <span class="navbar-toggler-bar bar1"> </span>
+            <span class="navbar-toggler-bar bar2"> </span>
+            <span class="navbar-toggler-bar bar3"> </span>
+          </button>
+        </div>
+        <div
+          class="navbar-collapse"
+          [isAnimated]="true"
+          [collapse]="isCollapsed"
+          id="example-navbar-primary"
+        >
+        <ul class="navbar-nav ml-auto">
+          <li class="dropdown nav-item" dropdown>
+            <a
+              class="dropdown-toggle nav-link dropdown-toggle"
+              data-toggle="dropdown"
+              dropdownToggle
+              href="javascript:void(0)"
+            >
+              <i class="fa fa-cogs d-lg-none d-xl-none"> </i> Events 
+            </a>
+            <div class="dropdown-menu dropdown-with-icons" *dropdownMenu>
+              <a
+                class="dropdown-item"
+                [routerLink]="['/maplist']"
+                
+              >
+                <i class="tim-icons icon-paper"> </i> Map List
+              </a>
+              <a class="dropdown-item" [routerLink]="['/landing']">
+                <i class="tim-icons icon-bullet-list-67"> </i> Register Page
+              </a>
+              <a class="dropdown-item" [routerLink]="['/list-event']">
+                <i class="tim-icons icon-image-02"> </i> List Event
+              </a>
+              <a class="dropdown-item" [routerLink]="['/update-event']">
+                <i class="tim-icons icon-single-02"> </i> Update
+              </a>
+            </div>
+          </li>
+          <li class="dropdown nav-item" dropdown>
+            <a
+              class="dropdown-toggle nav-link dropdown-toggle"
+              data-toggle="dropdown"
+              dropdownToggle
+              href="javascript:void(0)"
+            >
+              <i class="fa fa-cogs d-lg-none d-xl-none"> </i> Items 
+            </a>
+            <div class="dropdown-menu dropdown-with-icons" *dropdownMenu>
+              
+              
+              <a class="dropdown-item" [routerLink]="['/item']">
+                <i class="tim-icons icon-bullet-list-67"> </i> Add Item
+              </a>
+              <a class="dropdown-item" [routerLink]="['/list-items']">
+                <i class="tim-icons icon-image-02"> </i> List Items
+              </a>
+            </div>
+          </li>
+          <li class="dropdown nav-item" dropdown>
+            <a
+              class="dropdown-toggle nav-link dropdown-toggle"
+              data-toggle="dropdown"
+              dropdownToggle
+              href="javascript:void(0)"
+            >
+              <i class="fa fa-cogs d-lg-none d-xl-none"> </i> Publicities 
+            </a>
+            <div class="dropdown-menu dropdown-with-icons" *dropdownMenu>
+              
+              
+              <a class="dropdown-item" [routerLink]="['/publicity']">
+                <i class="tim-icons icon-bullet-list-67"> </i> Add Publicity
+              </a>
+              <a class="dropdown-item" [routerLink]="['/list-publicities']">
+                <i class="tim-icons icon-image-02"> </i> List Publicities
+              </a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/profile']">
+              <i class="tim-icons icon-single-02"> </i> Profile
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)">
+              <i class="tim-icons icon-settings-gear-63"> </i> Settings
+            </a>
+          </li>
+        </ul>
+        </div>
+      </div>
+  </nav>
+
+ <div class="wrapper">
+  
+ 
+  
+  
+  <section class="section section-lg section-coins">
+    <img class="path" src="assets/img/path3.png" />
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <hr class="line-info" />
+
+          <h1>
+            Choose the coin
+            <span class="text-info"> that fits your needs </span>
+          </h1>
+        </div>
+      </div>
+     
+        
+          <div class="card card-coin card-plain">
+            <div class="card-header">
+              <img class="img-center img-fluid" src="assets/img/etherum.png" />
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-12 text-center">
+                  <h4 class="text-uppercase">{{Event.title}}</h4>
+                  <span>{{Event.description}}
+                   
+                   </span>
+                  <hr class="line-primary" />
+                </div>
+              </div>
+              <div class="row">
+                <ul class="list-group">
+                  <li class="list-group-item">Max number Participants : {{Event.maxNumberParticipant}} </li>
+                  <li class="list-group-item">{{Event.numberParticipants}} participants</li>
+                  <li class="list-group-item">Starts :  {{Event.startDate}} </li>
+                  <li class="list-group-item">Until  :  {{Event.endDate}}</li>
+                </ul>
+              </div>
+            </div>
+           
+            <div class="card-footer text-center">
+              <button class="btn btn-primary btn-simple" [routerLink]="['/maplist', Event._id]">Get Map</button>
+            </div>
+          </div>
+        
+        
+        
+      
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3"><h1 class="title">EarnMe</h1></div>
+       
+        <div class="col-md-3">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                Contact Us
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                About Us
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                Blog
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                License
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h3 class="title">Follow us:</h3>
+          <div class="btn-wrapper profile">
+            <a
+              class="btn btn-icon btn-neutral btn-round btn-simple mr-1"
+              href="https://twitter.com/creativetim"
+              target="_blank"
+            >
+              <i class="fab fa-twitter"> </i>
+            </a>
+            <a
+              class="btn btn-icon btn-neutral btn-round btn-simple mr-1"
+              href="https://www.facebook.com/creativetim"
+              target="_blank"
+            >
+              <i class="fab fa-facebook-square"> </i>
+            </a>
+            <a
+              class="btn btn-icon btn-neutral btn-round btn-simple"
+              href="https://dribbble.com/creativetim"
+              target="_blank"
+            >
+              <i class="fab fa-dribbble"> </i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
